@@ -93,3 +93,5 @@ Ahora si, si entramos en el enlace, nos saldrá la página que acabamos de subir
 Y ya estaría, podríamos hacer exactamente lo mismo en caso de error:
 
 ![alt text](img/image-13.png)
+
+De esta forma, quedaría terminado esta primero prueba de la formación.
