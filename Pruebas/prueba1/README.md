@@ -94,4 +94,4 @@ Y ya estaría, podríamos hacer exactamente lo mismo en caso de error:
 
 ![alt text](img/image-13.png)
 
-De esta forma, quedaría terminado esta primero prueba de la formación.
+De esta forma, ya habríamos creado nuestro sitio web estático y visto los buckets S3.
