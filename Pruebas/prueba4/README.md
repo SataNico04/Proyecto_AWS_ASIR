@@ -12,7 +12,7 @@ Como crear la VPC ya lo vimos [aquí](../prueba2/), voy a pasar directamente a c
 
 El primer paso es acceder a la consola de RDS y seleccionar la opción para crear una nueva base de datos. AWS ofrece dos modos de creación: estándar y sencilla. Se recomienda la opción estándar para tener mayor control sobre la configuración.
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 De las primeras cosas que tendremos que elegir es el motor de la base de datos. Como dije antes existen varios modelos:
 
@@ -31,7 +31,7 @@ A continuación, se elige la plantilla de despliegue según el entorno: producci
 
 ## 2. Configuración de la Instancia
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 Se definen el identificador de la instancia, el ``usuario`` administrador y la ``contraseña``. Es importante establecer una contraseña ``segura``, de al menos 8 caracteres, conforme a los requisitos mínimos de AWS.
 
@@ -47,13 +47,13 @@ En el apartado de ``almacenamiento``, se selecciona el ``tipo`` (SSD, magnético
 
 En el apartado de ``conectividad`` vamos a ajustar como la base de datos se comunica en la RED. Primeramente, vamos a configurar todo sin elegir la EC2, ya la elegiremos cuando esté creada para ver todos los apartados posibles. Elegimos la ``VPC`` que tengamos creada, en mi caso es la misma que creamos [aquí](../prueba2/), y en ``grupos de subredes``, tenemos que crearlos de 0, nos vamos a la pestaña principal de ``Aurora and RDS`` y en el panel de la izquierda elegimos ``Grupos de subredes``.
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 La configuración depende un poco de como hallamos creado la ``VPC``, las únicas opciones que pueden variar son las ``Zonas de disponibilidad`` y las ``Subredes``, que deben ser las mismas que pusimos al crear la ``VPC``. Mi configuración quedaría así:
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 Volvemos a la configuración de la RDS y ponemos el grupo que acabamos de crear, puede que tengamos que recargar la página. Elegimos el grupo de subredes que acabamos de crear, le quitamos el acceso público para que solo recursos del mismo ``VPC`` puedan acceder a la ``RDS``.
 
@@ -63,6 +63,6 @@ El ``grupo de seguridad``, crearemos uno desde 0 en una de las zonas de disponib
 
 Una vez creada la base de datos, se conecta a una instancia ``EC2`` dentro de la misma ``VPC``. Para ello, se accede al apartado de ``recursos de computación conectados en la consola de RDS``, se selecciona ``Configurar conexión de EC2`` y se añade la máquina correspondiente. Tras configurar la conexión, se realiza una prueba de acceso desde la ``EC2`` para verificar la conectividad y el correcto funcionamiento de la base de datos:
 
-![alt text](image-5.png)
+![alt text](img/image-5.png)
 
 Este procedimiento garantiza la creación segura y eficiente de una base de datos RDS, así como su integración con otros servicios de AWS, siguiendo las mejores prácticas de segmentación y seguridad en la nube.
